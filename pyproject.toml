@@ -1,0 +1,12 @@
+[project]
+name = "ai-noise-cleaner"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "deepfilternet==0.5.6",
+    "numpy==1.26.4",
+    "torch==2.2.2",
+    "torchaudio==2.2.2",
+]
