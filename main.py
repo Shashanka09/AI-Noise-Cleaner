@@ -1,11 +1,20 @@
-from src.audio_processor import clean_audio
-from src.audio_normalizer import normalize_audio
+import sys
+
+from src.pipeline import process_audio
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python main.py <audio_file>")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+
+    final_output = process_audio(input_file)
+
+    print(f"\nProcessing completed!")
+    print(f"Output: {final_output}")
 
 
 if __name__ == "__main__":
-    denoised_file = clean_audio("input/sample_audio_1.wav")
-
-    normalize_audio(
-        denoised_file,
-        "output/sample_audio_1_normalized.wav",
-    )
+    main()
